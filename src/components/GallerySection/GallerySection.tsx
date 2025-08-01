@@ -1,0 +1,58 @@
+import React, { useRef, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import './GallerySection.css';
+
+import img1 from '../../assets/images/clinica-recepcao.jpg';
+import img2 from '../../assets/images/clinica-escritorio.jpg';
+import img3 from '../../assets/images/clinica-consultorio.jpg';
+import img4 from '../../assets/images/clinica-sala-tratamento-1.jpg';
+import img5 from '../../assets/images/clinica-tratamento-2.jpg';
+import img6 from '../../assets/images/clinica-tratamento-3.jpg';
+
+const galleryImages = [
+  { src: img1, alt: 'Recepção do Instituto TUGANI' },
+  { src: img2, alt: 'Escritório da clínica' },
+  { src: img3, alt: 'Consultório do Instituto TUGANI' },
+  { src: img4, alt: 'Sala de tratamento do Instituto TUGANI' },
+  { src: img5, alt: 'Paciente recebendo tratamento corporal' },
+  { src: img6, alt: 'Paciente recebendo tratamento estético' },
+];
+
+export const GallerySection: React.FC = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    if (carouselRef.current) {
+      setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
+    }
+  }, []);
+
+  return (
+    <section className="gallery-section">
+      <div className="gallery-header">
+        <h2 className="gallery-title">O Espaço</h2>
+        <p className="gallery-subtitle">Um ambiente projetado para seu conforto, segurança e bem-estar.</p>
+      </div>
+      
+      <motion.div ref={carouselRef} className="gallery-carousel-wrapper" whileTap={{ cursor: "grabbing" }}>
+        <motion.div 
+          className="gallery-container" 
+          drag="x" 
+          dragConstraints={{ right: 0, left: -width }}
+          dragElastic={0.1}
+          dragTransition={{
+            power: 0.15,
+            timeConstant: 250
+          }}
+        >
+          {galleryImages.map((image, index) => (
+            <motion.div key={index} className="gallery-item">
+              <img src={image.src} alt={image.alt} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
+    </section>
+  );
+};

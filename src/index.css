@@ -1,0 +1,35 @@
+:root {
+  --color-background: #FFFFFF;
+  --color-text: #5A341D;
+  --color-primary: #8CC63F;
+  --color-accent: #FCEDE3;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-accent: 'Lora', serif;
+  --color-verde: #8A9A5B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 700;
+}
+
+#root {
+  isolation: isolate;
+}
