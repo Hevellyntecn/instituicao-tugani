@@ -1,5 +1,5 @@
 :root {
- --color-background: #FFFFFF;
+  --color-background: #FFFFFF;
   --color-text: #5A341D;
   --color-primary: #8CC63F;
   --color-accent: #FCEDE3;
@@ -23,7 +23,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
-  /* EMPURRA O CONTEÚDO PARA BAIXO DO HEADER */
+  /* Esta linha garante que o conteúdo principal comece abaixo do header */
   padding-top: 80px; 
 }
 
