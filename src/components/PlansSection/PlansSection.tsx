@@ -1,12 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+// 'AnimatePresence' foi removido da linha abaixo
+import { motion } from 'framer-motion';
 import './PlansSection.css';
-
-// Função para criar o link do WhatsApp dinamicamente
-const createWhatsAppLink = (planTitle: string) => {
-  const message = `Olá! Gostaria de saber mais sobre o ${planTitle} do Instituto Tugani.`;
-  return `https://wa.me/5565981703400?text=${encodeURIComponent(message)}`;
-};
 
 const plansData = [
     { title: "Plano 1: Design de Sobrancelhas", price: "R$ 67,00", details: "mensais (sem pigmentação)", features: ["2 sessões por mês", "Opção com pigmentação por R$87/mês", "Plano Anual"] },
@@ -28,7 +23,6 @@ const plansData = [
 export const PlansSection: React.FC = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -51,53 +45,28 @@ export const PlansSection: React.FC = () => {
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
         >
-          {plansData.map((plan, index) => {
-            const isExpanded = expandedIndex === index;
-            const hasMoreFeatures = plan.features.length > 2;
-
-            return (
-              <motion.div key={index} className="plan-card">
-                <h3 className="plan-card-title">{plan.title}</h3>
-                <div className="plan-card-price-wrapper">
-                  <span className="plan-card-price">{plan.price}</span>
-                  <span className="plan-card-details">{plan.details}</span>
-                </div>
-                <div className="plan-card-features">
-                  <ul>
-                    {plan.features.slice(0, 2).map((feature, idx) => (
-                      <li key={idx}>{feature}</li>
-                    ))}
-                  </ul>
-
-                  <AnimatePresence>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        style={{ overflow: 'hidden' }}
-                      >
-                        <ul>
-                          {plan.features.slice(2).map((feature, idx) => (
-                            <li key={idx}>{feature}</li>
-                          ))}
-                        </ul>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-
-                </div>
-                <a
-                  href={createWhatsAppLink(plan.title)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="plan-card-cta"
-                >
-                  Quero Saber Mais
-                </a>
-              </motion.div>
-            );
-          })}
+          {plansData.map((plan, index) => (
+            <motion.div key={index} className="plan-card">
+              <h3 className="plan-card-title">{plan.title}</h3>
+              <div className="plan-card-price-wrapper">
+                <span className="plan-card-price">{plan.price}</span>
+                <span className="plan-card-details">{plan.details}</span>
+              </div>
+              <ul className="plan-card-features">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx}>✓ {feature}</li>
+                ))}
+              </ul>
+              <a
+                href={`https://wa.me/5565981703400?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${plan.title} do Instituto Tugani.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="plan-card-cta"
+              >
+                Quero Saber Mais
+              </a>
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </section>

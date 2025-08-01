@@ -8,7 +8,7 @@ const services = [
     category: 'Odontologia',
     title: 'Odontologia Estética',
     description: 'Transforme seu sorriso com tratamentos modernos e personalizados',
-    icon: '🦷',
+    icon: '',
     features: [
       'Clareamento dental profissional',
       'Lentes de contato dentais',
@@ -23,7 +23,7 @@ const services = [
     category: 'Estética Facial',
     title: 'Harmonização Facial',
     description: 'Realce sua beleza natural com procedimentos avançados',
-    icon: '✨',
+    icon: '',
     features: [
       'Rinomodelação com fios permanentes',
       'Preenchimento labial',
@@ -38,7 +38,7 @@ const services = [
     category: 'Estética Corporal',
     title: 'Tratamentos Corporais',
     description: 'Cuide do seu corpo com técnicas inovadoras e resultados comprovados',
-    icon: '💪',
+    icon: '',
     features: [
       'Lipoaspiração de papada',
       'Massagem modeladora',
@@ -120,7 +120,7 @@ export const ServicesSection: React.FC = () => {
           <h3>Quer conhecer todos os nossos tratamentos?</h3>
           <p>Agende uma avaliação personalizada e descubra qual é o melhor tratamento para você</p>
           <a 
-            href='https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20do%20Instituto%20Tugani'
+            href='https://whatsapp.faleconosco.chat/redirect/731235a3f'
             target='_blank'
             rel='noopener noreferrer'
             className='services-button'

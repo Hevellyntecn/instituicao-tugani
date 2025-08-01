@@ -1,10 +1,10 @@
 import { Header } from './components/Header/Header';
 import { HeroSlider } from './components/HeroSlider/HeroSlider';
-import { JourneysSection } from './components/JourneysSection/JourneysSection';
+import { ServicesSection } from './components/ServicesSection/ServicesSection';
 import { ProductsShowcase } from './components/ProductsShowcase/ProductsShowcase';
 import { TestimonialsSection } from './components/TestimonialsSection/TestimonialsSection';
-import { PlansSection } from './components/PlansSection/PlansSection';
 import { GallerySection } from './components/GallerySection/GallerySection';
+import { PlansSection } from './components/PlansSection/PlansSection';
 import { Footer } from './components/Footer/Footer';
 import './index.css';
 
@@ -13,9 +13,8 @@ function App() {
     <>
       <Header />
       <main>
-        {/* O HeroSlider agora é a primeira seção visível abaixo do Header */}
         <HeroSlider />
-        <JourneysSection />
+        <ServicesSection />
         <ProductsShowcase />
         <TestimonialsSection />
         <PlansSection />

@@ -1,4 +1,3 @@
-/* Plans Section Styles */
 .plans-section {
   padding: 100px 0;
   background: linear-gradient(135deg, var(--color-accent) 0%, #f8f4f0 50%, var(--color-accent) 100%);
@@ -21,8 +20,10 @@
 .plans-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto  20%;
+  margin: 0 auto 60px auto;
   padding: 0 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .plans-title {
@@ -51,8 +52,8 @@
   color: var(--color-text);
   opacity: 0.8;
   max-width: 700px;
-  margin: 10px;
-  line-height: 1.2;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .plans-carousel-wrapper {
@@ -60,7 +61,6 @@
   z-index: 2;
   max-width: 100%;
   overflow: hidden;
-  padding: 20px 0;
 }
 
 .plans-container {
@@ -68,6 +68,7 @@
   gap: 30px;
   padding: 20px 40px;
   cursor: grab;
+  width: max-content;
 }
 
 .plans-container:active {
@@ -75,25 +76,19 @@
 }
 
 .plan-card {
-  min-width: 320px;
-  max-width: 320px;
+  width: 320px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 25px;
-  padding: 20px 40px;
-  box-shadow: 
-    0 15px 35px rgba(0, 0, 0, 0.1),
-    0 1px 8px rgba(0, 0, 0, 0.05);
-  border: 10px solid rgba(255, 255, 255, 0.3);
+  padding: 40px 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1), 0 1px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 500px;
 }
 
 .plan-card::before {
@@ -115,9 +110,7 @@
 
 .plan-card:hover {
   transform: translateY(-10px);
-  box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.15),
-    0 1px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
 .plan-card-title {
@@ -137,10 +130,10 @@
 .plan-card-price-wrapper {
   text-align: center;
   margin-bottom: 25px;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(140, 198, 63, 0.1), rgba(138, 154, 91, 0.1));
+  padding: 20px 10px;
+  background: linear-gradient(135deg, rgba(140, 198, 63, 0.05), rgba(138, 154, 91, 0.05));
   border-radius: 15px;
-  border: 1px solid rgba(140, 198, 63, 0.2);
+  border: 1px solid rgba(140, 198, 63, 0.1);
 }
 
 .plan-card-price {
@@ -157,7 +150,6 @@
   font-size: 0.9rem;
   color: var(--color-text);
   opacity: 0.7;
-  font-style: italic;
 }
 
 .plan-card-features {
@@ -172,28 +164,18 @@
   color: var(--color-text);
   line-height: 1.5;
   margin-bottom: 12px;
-  padding-left: 25px;
   position: relative;
-  display: flex;
-  align-items: flex-start;
 }
 
-.plan-card-features li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 0;
+.saber-mais-button {
+  background: none;
+  border: none;
   color: var(--color-primary);
-  font-weight: bold;
-  font-size: 1rem;
-  background: rgba(140, 198, 63, 0.1);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 10px 0;
+  margin-top: 10px;
+  text-align: left;
 }
 
 .plan-card-cta {
@@ -209,8 +191,6 @@
   text-align: center;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(140, 198, 63, 0.3);
-  position: relative;
-  overflow: hidden;
   margin-top: auto;
 }
 
@@ -220,118 +200,16 @@
   background: linear-gradient(135deg, var(--color-verde) 0%, var(--color-primary) 100%);
 }
 
-.plan-card-cta:active {
-  transform: translateY(0);
-}
-
-/* Scroll indicator */
-.plans-carousel-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  z-index: 3;
-  pointer-events: none;
-}
-
-.plans-carousel-wrapper::after {
-  content: '→';
-  font-size: 1.2rem;
-  color: var(--color-primary);
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .plans-section {
-    padding: 60px 0;
+    padding: 80px 0;
   }
-
   .plans-container {
     padding: 20px;
     gap: 20px;
   }
-
   .plan-card {
-    min-width: 280px;
-    max-width: 280px;
+    width: 300px;
     padding: 30px 20px;
-    height: 450px;
   }
-
-  .plan-card-title {
-    font-size: 1.1rem;
-    min-height: 50px;
-  }
-
-  .plan-card-price {
-    font-size: 1.7rem;
-  }
-
-  .plan-card-features li {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-
-  .plan-card-cta {
-    padding: 12px 20px;
-    font-size: 0.9rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-}
-
-@media (max-width: 480px) {
-  .plans-container {
-    padding: 15px;
-    gap: 15px;
-  }
-
-  .plan-card {
-    min-width: 260px;
-    max-width: 260px;
-    padding: 25px 15px;
-    height: 420px;
-  }
-
-  .plan-card-title {
-    font-size: 1rem;
-    min-height: 45px;
-  }
-
-  .plan-card-price {
-    font-size: 1.5rem;
-  }
-
-  .plan-card-features li {
-    font-size: 0.85rem;
-    margin-bottom: 8px;
-  }
-
-  .plan-card-cta {
-    padding: 10px 15px;
-    font-size: 0.85rem;
-    opacity: 0.9;
-  }
-}
-.saber-mais-button {
-  background: none;
-  border: none;
-  color: var(--color-primary);
-  font-weight: 700;
-  cursor: pointer;
-  padding: 10px 0;
-  margin-top: 10px;
-  text-align: left;
 }
