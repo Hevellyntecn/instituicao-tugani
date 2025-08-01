@@ -1,119 +1,76 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './TestimonialsSection.css';
 
+// Importando as imagens
+import resultado1 from '../../assets/images/resultado-01.jpg';
+import resultado2 from '../../assets/images/resultado-02.jpg';
+
+import resultado4 from '../../assets/images/resultado-04.jpg';
+
+// Importando os vídeos
+import video1 from '../../assets/images/resultado-video-01.mp4';
+import video2 from '../../assets/images/resultado-video-02.mp4';
+import video3 from '../../assets/images/resultado-video-03.mp4';
+
+// Nova estrutura de dados que inclui um tipo para cada item
+const resultsData = [
+  { id: 1, type: 'image', src: resultado1, alt: 'Resultado de tratamento facial 1' },
+  { id: 2, type: 'image', src: resultado2, alt: 'Resultado de tratamento facial 2' },
+  { id: 3, type: 'image', src: resultado4, alt: 'Resultado de tratamento facial 4' },
+  { id: 4, type: 'video', src: video1, alt: 'Resultado de tratamento em vídeo 1' },
+  { id: 5, type: 'video', src: video2, alt: 'Resultado de tratamento em vídeo 2' },
+  { id: 6, type: 'video', src: video3, alt: 'Resultado de tratamento em vídeo 3' }
+];
+
 export const TestimonialsSection: React.FC = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: "Maria Silva",
-      role: "Paciente",
-      content: "A Dra. Wanessa transformou minha autoestima! O tratamento foi incrível e os resultados superaram minhas expectativas. Recomendo para todas!",
-      rating: 5,
-      imageName: "testimonial-maria-silva.jpg"
-    },
-    {
-      id: 2,
-      name: "Ana Costa",
-      role: "Paciente",
-      content: "Profissionalismo e excelência! A Dra. Wanessa é muito atenciosa e os resultados são naturais e duradouros. Estou muito satisfeita!",
-      rating: 5,
-      imageName: "testimonial-ana-costa.jpg"
-    },
-    {
-      id: 3,
-      name: "Juliana Santos",
-      role: "Paciente",
-      content: "Incrível como um pequeno ajuste pode fazer toda diferença! A Dra. Wanessa tem mãos de fada. Meu nariz ficou perfeito!",
-      rating: 5,
-      imageName: "testimonial-juliana-santos.jpg"
-    },
-    {
-      id: 4,
-      name: "Fernanda Lima",
-      role: "Paciente",
-      content: "Atendimento excepcional desde o primeiro contato. A Dra. Wanessa é muito profissional e os resultados são fantásticos!",
-      rating: 5,
-      imageName: "testimonial-fernanda-lima.jpg"
-    },
-    {
-      id: 5,
-      name: "Patrícia Oliveira",
-      role: "Paciente",
-      content: "Finalmente encontrei uma profissional que entende o que eu queria! A Dra. Wanessa é sensacional e os resultados são incríveis.",
-      rating: 5,
-      imageName: "testimonial-patricia-oliveira.jpg"
-    },
-    {
-      id: 6,
-      name: "Camila Rodrigues",
-      role: "Paciente",
-      content: "Super recomendo! A Dra. Wanessa é muito competente e atenciosa. O procedimento foi tranquilo e os resultados são maravilhosos!",
-      rating: 5,
-      imageName: "testimonial-camila-rodrigues.jpg"
-    }
-  ];
-
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <span key={index} className={`star ${index < rating ? 'filled' : ''}`}>
-        ★
-      </span>
-    ));
-  };
-
   return (
     <section id="testimonials" className="testimonials-section">
       <div className="testimonials-container">
         <div className="testimonials-header">
           <h2 className="testimonials-title">
-            Histórias de Sucesso Reais
+            Resultados que Falam por Si
           </h2>
           <p className="testimonials-subtitle">
-            Depoimentos de pacientes que transformaram suas vidas com a Dra. Wanessa. Veja como pequenos ajustes podem fazer toda diferença!
+            Acreditamos na transformação real e visível. Veja alguns exemplos do nosso trabalho.
           </p>
         </div>
 
         <div className="testimonials-grid">
-          {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-card">
-              <div className="testimonial-header">
-                <div className="testimonial-avatar">
-                  {/* Aqui você pode adicionar as imagens reais */}
-                  <div className="avatar-placeholder">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  {/* 
-                  Para adicionar as imagens reais, substitua o div acima por:
-                  <img 
-                    src={`/src/assets/images/${testimonial.imageName}`}
-                    alt={testimonial.name}
-                    className="testimonial-image"
-                  />
-                  */}
-                </div>
-                <div className="testimonial-info">
-                  <h4 className="testimonial-name">{testimonial.name}</h4>
-                  <p className="testimonial-role">{testimonial.role}</p>
-                  <div className="testimonial-rating">
-                    {renderStars(testimonial.rating)}
-                  </div>
-                </div>
-              </div>
-              <div className="testimonial-content">
-                <p>"{testimonial.content}"</p>
-              </div>
-            </div>
+          {resultsData.map((result, index) => (
+            <motion.div
+              key={result.id}
+              className="testimonial-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              {/* Lógica para renderizar imagem ou vídeo */}
+              {result.type === 'image' ? (
+                <img src={result.src} alt={result.alt} className="testimonial-media" />
+              ) : (
+                <video 
+                  src={result.src} 
+                  className="testimonial-media" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                />
+              )}
+            </motion.div>
           ))}
         </div>
 
         <div className="testimonials-cta">
           <h3>Quer fazer parte das nossas histórias de sucesso?</h3>
           <p>Agende sua avaliação e descubra como podemos transformar sua autoestima. Sua história de sucesso pode começar hoje!</p>
-          <a 
-            href="https://whatsapp.faleconosco.chat/redirect/731235a3f?utm_campaign=20365251335&utm_source=adwords&utm_medium=172629053681&utm_term=estetica%20facial&matchtype=b&device=m&network=g&loc=9101900&placement&gad_source=1&gad_campaignid=20365251335&gbraid=0AAAAAp7dcV0mLiaO9f3Ni2Z18sebrFa65&gclid=Cj0KCQjws4fEBhD-ARIsACC3d2_TNE0lfJJ1YUXaUes66Rrp72vr62YnZWTkduDhB5YHcDvJ4dypS84aAq5BEALw_wcB"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="testimonials-button"
+          <a
+          href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Vi%20os%20resultados%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20conhecer%20mais."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="testimonials-button"
           >
             Agendar Avaliação
           </a>
@@ -121,4 +78,4 @@ export const TestimonialsSection: React.FC = () => {
       </div>
     </section>
   );
-}; 
+};

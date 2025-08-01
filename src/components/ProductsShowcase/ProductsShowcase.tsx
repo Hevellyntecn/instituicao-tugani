@@ -58,13 +58,18 @@ const products = [
   },
 ];
 
+const createProductWhatsAppLink = (productName: string) => {
+  const message = `Olá! Gostaria de saber mais sobre o produto ${productName}.`;
+  return `https://wa.me/5565981703400?text=${encodeURIComponent(message)}`;
+};
+
 export const ProductsShowcase: React.FC = () => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex(prevIndex => (prevIndex + 1) % products.length);
-    }, 5000);
+    }, 5000); // Aumentei para 5s para dar tempo de ler
     return () => clearInterval(interval);
   }, []);
 
@@ -96,55 +101,57 @@ export const ProductsShowcase: React.FC = () => {
 
         {/* Coluna da Direita: Informações */}
         <div className="product-info-final">
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="product-content"
-          >
-            <h2 className="product-info-main-title">Nossa Linha Completa</h2>
-            
-            <div className="product-details">
-              <h3 className="product-title">{currentProduct.label}</h3>
-              <p className="product-description">{currentProduct.description}</p>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="product-content"
+            >
+              <h2 className="product-info-main-title">Nossa Linha Completa</h2>
               
-              <div className="benefits-section">
-                <h4 className="benefits-title">Principais Benefícios</h4>
-                <ul className="benefits-list">
-                  {currentProduct.benefits.map((benefit, idx) => (
-                    <motion.li 
-                      key={benefit}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 + idx * 0.1 }}
-                      className="benefit-item"
-                    >
-                      <span className="benefit-icon">✦</span>
-                      {benefit}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+              <div className="product-details">
+                <h3 className="product-title">{currentProduct.label}</h3>
+                <p className="product-description">{currentProduct.description}</p>
+                
+                <div className="benefits-section">
+                  <h4 className="benefits-title">Principais Benefícios</h4>
+                  <ul className="benefits-list">
+                    {currentProduct.benefits.map((benefit, idx) => (
+                      <motion.li 
+                        key={benefit}
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 + idx * 0.1 }}
+                        className="benefit-item"
+                      >
+                        <span className="benefit-icon">✦</span>
+                        {benefit}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className="ingredients-section">
-                <h4 className="ingredients-title">Ingredientes Principais</h4>
-                <p className="ingredients-text">{currentProduct.ingredients}</p>
-              </div>
+                <div className="ingredients-section">
+                  <h4 className="ingredients-title">Ingredientes Principais</h4>
+                  <p className="ingredients-text">{currentProduct.ingredients}</p>
+                </div>
 
-              <div className="product-cta">
-                <a 
-                  href="https://whatsapp.faleconosco.chat/redirect/731235a3f?utm_campaign=20365251335&utm_source=adwords&utm_medium=172629053681&utm_term=estetica%20facial&matchtype=b&device=m&network=g&loc=9101900&placement&gad_source=1&gad_campaignid=20365251335&gbraid=0AAAAAp7dcV0mLiaO9f3Ni2Z18sebrFa65&gclid=Cj0KCQjws4fEBhD-ARIsACC3d2_TNE0lfJJ1YUXaUes66Rrp72vr62YnZWTkduDhB5YHcDvJ4dypS84aAq5BEALw_wcB"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="product-button"
-                >
-                  Conhecer Produtos
-                </a>
+                <div className="product-cta">
+                  <a 
+                    href={createProductWhatsAppLink(currentProduct.label)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="product-button"
+                  >
+                    Saber Mais sobre {currentProduct.label}
+                  </a>
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

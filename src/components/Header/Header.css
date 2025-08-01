@@ -2,8 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1000;
+  background-color: rgba(253, 252, 251, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-accent);
   transition: all 0.3s ease;
 }
 
@@ -201,16 +205,16 @@
 }
 
 @media (max-width: 768px) {
-  .navigation-desktop,
-  .header-actions-desktop {
+  .header-container {
+    height: 60px; /* Header um pouco menor no mobile */
+  }
+  .header-fixed {
+    padding: 10px 20px;
+  }
+  .navigation-desktop, .header-actions-desktop {
     display: none;
   }
-
   .hamburger-button {
     display: flex;
-  }
-
-  .header-container {
-    padding: 0 15px;
   }
 }

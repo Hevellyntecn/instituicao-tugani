@@ -1,5 +1,5 @@
 :root {
-  --color-background: #FFFFFF;
+ --color-background: #FFFFFF;
   --color-text: #5A341D;
   --color-primary: #8CC63F;
   --color-accent: #FCEDE3;
@@ -23,6 +23,8 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
+  /* EMPURRA O CONTEÚDO PARA BAIXO DO HEADER */
+  padding-top: 80px; 
 }
 
 h1, h2, h3, h4, h5, h6 {

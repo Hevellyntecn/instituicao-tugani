@@ -1,6 +1,5 @@
 import { Header } from './components/Header/Header';
 import { HeroSlider } from './components/HeroSlider/HeroSlider';
-import { ServicesSection } from './components/ServicesSection/ServicesSection.tsx';
 import { JourneysSection } from './components/JourneysSection/JourneysSection';
 import { ProductsShowcase } from './components/ProductsShowcase/ProductsShowcase';
 import { TestimonialsSection } from './components/TestimonialsSection/TestimonialsSection';
@@ -14,8 +13,8 @@ function App() {
     <>
       <Header />
       <main>
+        {/* O HeroSlider agora é a primeira seção visível abaixo do Header */}
         <HeroSlider />
-        <ServicesSection />
         <JourneysSection />
         <ProductsShowcase />
         <TestimonialsSection />

@@ -1,6 +1,6 @@
 import React from 'react';
 import './HeroSlider.css';
-import draWanessaImage from '../../assets/images/dra-wanessa.jpg';
+import draWanessaImage from '../../assets/images/dra-wanessa-manifesto.jpg';
 
 export const HeroSlider: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ export const HeroSlider: React.FC = () => {
                 <div className="hero-button-wrapper">
                   <a
                     className="hero-button"
-                    href="https://whatsapp.faleconosco.chat/redirect/731235a3f?utm_campaign=20365251335&utm_source=adwords&utm_medium=172629053681&utm_term=estetica%20facial&matchtype=b&device=m&network=g&loc=9101900&placement&gad_source=1&gad_campaignid=20365251335&gbraid=0AAAAAp7dcV0mLiaO9f3Ni2Z18sebrFa65&gclid=Cj0KCQjws4fEBhD-ARIsACC3d2_TNE0lfJJ1YUXaUes66Rrp72vr62YnZWTkduDhB5YHcDvJ4dypS84aAq5BEALw_wcB"
+                    href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20gratuita."
                     target="_blank"
                     rel="noopener noreferrer"
                   >
