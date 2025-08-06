@@ -16,8 +16,8 @@ export const HeroSlider: React.FC = () => {
             </div>
             <div className="hero-description animated fadeInRight">
               <p>
-                <strong>Dra. Wanessa</strong>
-                <span> especialista em harmonização facial e corporal. Descubra como pequenos ajustes podem transformar completamente sua aparência e renovar sua confiança. Resultados naturais e duradouros que você sempre sonhou!</span>
+                <strong>Dra. Wanessa Faria </strong>
+                <span> é Cirurgiã-Dentista, Farmacêutica e Doutora pela UNICAMP, especialista em Estética Facial e referência em estética regenerativa. CEO do Instituto Tugani, lidera uma equipe dedicada ao cuidado integral e à valorização da saúde bucal e beleza natural. É também criadora da Tugani Cosméticos, marca orgânica e vegana desenvolvida com ativos biocompatíveis à base de café verde, unindo ciência, sustentabilidade e inovação em cuidados com a pele.</span>
               </p>
             </div>
             <div className="hero-button-section">
@@ -30,7 +30,7 @@ export const HeroSlider: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     <span className="button-content-wrapper">
-                      <span className="button-text">Agendar Consulta Gratuita</span>
+                      <span className="button-text">Agende uma consulta</span>
                     </span>
                   </a>
                 </div>

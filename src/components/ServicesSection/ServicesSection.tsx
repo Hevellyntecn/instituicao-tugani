@@ -10,43 +10,51 @@ const services = [
     description: 'Transforme seu sorriso com tratamentos modernos e personalizados',
     icon: '',
     features: [
-      'Clareamento dental profissional',
-      'Lentes de contato dentais',
-      'Aparelho invisível',
+      'Odontologia Estética',
+      'Clínico Geral',
+      'Tratamento de Canal',
       'Implantes dentários',
-      'Ortodontia estética'
-    ],
-    color: 'var(--color-primary)'
+      'Prótese total (dentadura) e parcial',
+      'Ortodontia (aparelhos ortodônticos)',
+      'Distúrbio do sono e bruxismo',
+      'Odontopediatria',
+      'Atendimento a pacientes com necessidades especiais(transtorno do espectro autista e outras condições que afetam o neurodesenvoleimento)',   ],
   },
   {
     id: 2,
-    category: 'Estética Facial',
-    title: 'Harmonização Facial',
+    category: 'Harmonização',
+    title: 'Harmonização Facial e Corporal',
     description: 'Realce sua beleza natural com procedimentos avançados',
-    icon: '',
     features: [
-      'Rinomodelação com fios permanentes',
+      'Gerenciamento de pele',
+      'Rejuvenecimento facial e corporal',
+      'Harmonização facial',
       'Preenchimento labial',
-      'Botox e toxina botulínica',
-      'Bioestimulador de colágeno',
-      'Peelings e microagulhamento'
+      'Bioestímulo de colágeno',
+      'Estética Regenerativa',
+      'Suplementação natural personalizada',
+      'Prescrição de biocosméticos personalizados',
+      'Tratamento de flacidez',
+      'Tratamento de cicatrizes e manchas',
+      'Harmonização do bumbum',
     ],
-    color: 'var(--color-verde)'
   },
   {
     id: 3,
-    category: 'Estética Corporal',
+    category: 'Spa e Terapia ',
     title: 'Tratamentos Corporais',
     description: 'Cuide do seu corpo com técnicas inovadoras e resultados comprovados',
-    icon: '',
     features: [
-      'Lipoaspiração de papada',
-      'Massagem modeladora',
+      'Massagem relaxante',
+      'Massagem terapêutica',
+      'Aromaterapia',
+      'Spa dos pés',
+      'Ventosaterapia',
       'Drenagem linfática',
-      'Carboxiterapia',
-      'Harmonização do bumbum'
+      'Pós-operatório',
+      'Massagem modeladora',
+      'Liberação miofascial',
     ],
-    color: '#d4af37'
   }
 ];
 
@@ -81,7 +89,7 @@ export const ServicesSection: React.FC = () => {
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className='service-icon' style={{ backgroundColor: service.color }}>
+              <div className='service-icon' style={{ }}>
                 <span>{service.icon}</span>
               </div>
               

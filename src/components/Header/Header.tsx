@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
           </nav>
           <div className="header-actions-desktop">
             <a href="#contact" className="header-cta">
-              Agendar Sua Jornada
+              Agende uma consulta
             </a>
           </div>
           <button

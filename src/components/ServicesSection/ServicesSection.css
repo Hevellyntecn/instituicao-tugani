@@ -1,7 +1,7 @@
 /* Services Section Styles */
 .services-section {
   padding: 120px 0;
-  background: linear-gradient(135deg, #f8f4f0 0%, var(--color-accent) 50%, #f8f4f0 100%);
+  background: linear-gradient(135deg, #efdfcf 0%, var(--color-accent) 50%, #f8f4f0 100%);
   position: relative;
   overflow: hidden;
 }
