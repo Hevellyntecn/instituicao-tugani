@@ -68,8 +68,8 @@ export const ProductsShowcase: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex(prevIndex => (prevIndex + 1) % products.length);
-    }, 5000); // Aumentei para 5s para dar tempo de ler
+      setIndex((prevIndex: number) => (prevIndex + 1) % products.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -78,7 +78,6 @@ export const ProductsShowcase: React.FC = () => {
   return (
     <section id="products" className="showcase-final-section">
       <div className="showcase-final-container">
-        {/* Coluna da Esquerda: Animação */}
         <div className="product-stage-final">
           <AnimatePresence mode="wait">
             <motion.div
@@ -99,7 +98,6 @@ export const ProductsShowcase: React.FC = () => {
           </AnimatePresence>
         </div>
 
-        {/* Coluna da Direita: Informações */}
         <div className="product-info-final">
           <AnimatePresence mode="wait">
             <motion.div
@@ -144,9 +142,9 @@ export const ProductsShowcase: React.FC = () => {
                     href={createProductWhatsAppLink(currentProduct.label)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="product-button"
+                    className="btn-primary" 
                   >
-                    Saber Mais sobre {currentProduct.label}
+                    Saber Mais
                   </a>
                 </div>
               </div>
