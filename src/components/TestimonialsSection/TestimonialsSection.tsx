@@ -8,6 +8,7 @@ import resultado3 from '../../assets/images/resultado-03.jpg';
 import resultado4 from '../../assets/images/harmonização-01.jpg';
 import resultado5 from '../../assets/images/harmonização-02.jpg';
 import resultado6 from '../../assets/images/harmonização-03.jpg';
+import resultado7 from '../../assets/images/spa-01.jpg';
 
 // Supondo que você adicionou as imagens dos produtos na pasta de assets
 import produtoTugani1 from '../../assets/images/produto-tugani-01.jpg';
@@ -33,7 +34,8 @@ const resultsData: ResultItem[] = [
   { id: 7, type: 'image', category: 'Produtos Tugani', src: produtoTugani4, alt: 'Outro produto da linha Tugani' },
   { id: 8, type: 'image', category: 'Harmonização', src: resultado4, alt: 'Foto harmonização facial' },
   { id: 9, type: 'image', category: 'Harmonização', src: resultado3, alt: 'Foto harmonização facial' },
-  { id: 10, type: 'image', category: 'Harmonização', src: resultado5, alt: 'Foto harmonização facial' }
+  { id: 10, type: 'image', category: 'Harmonização', src: resultado5, alt: 'Foto harmonização facial' },
+  { id: 11, type: 'image', category: 'Spa e Terapia', src: resultado7, alt: 'Foto de spa e terapia' },
 ];
 
 const filterCategories: string[] = ['Todos', 'Odontologia', 'Harmonização', 'Spa e Terapia', 'Produtos Tugani'];
