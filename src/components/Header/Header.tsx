@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Header.css';
 import logoImg from '../../assets/images/logo-tugani.png';
 
 export const Header: React.FC = () => {
-  const [isTransparent, setIsTransparent] = useState(true);
+  // O estado 'isTransparent' e o useEffect foram removidos, pois não são mais necessários.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // O header só fica transparente no topo da página
-      setIsTransparent(window.scrollY < 50);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((open) => !open);
@@ -23,7 +13,8 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className={`header-fixed ${isTransparent ? 'header-transparent' : 'header-solid'}`}>
+      {/* O className agora é fixo, sem lógica condicional */}
+      <header className="header-fixed">
         <div className="header-container">
           <a href="#" className="logo">
             <img src={logoImg} alt="TUGANI Cosméticos Veganos" />
@@ -35,7 +26,8 @@ export const Header: React.FC = () => {
             <a href="#contact">Contato</a>
           </nav>
           <div className="header-actions-desktop">
-            <a href="#contact" className="header-cta">
+             {/* Usando a classe global que já criamos */}
+            <a href="#agendamento" className="btn-primary">
               Agende uma consulta
             </a>
           </div>
@@ -64,7 +56,7 @@ export const Header: React.FC = () => {
               <a href="#products" onClick={toggleMenu}>Produtos</a>
               <a href="#testimonials" onClick={toggleMenu}>Depoimentos</a>
               <a href="#contact" onClick={toggleMenu}>Contato</a>
-              <a href="#contact" className="mobile-nav-cta" onClick={toggleMenu}>
+              <a href="#agendamento" className="mobile-nav-cta" onClick={toggleMenu}>
                 Agendar Sua Jornada
               </a>
             </nav>

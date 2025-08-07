@@ -22,17 +22,50 @@
   font-family: var(--font-accent);
   font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
-  color: var(--color-text);
+  color: #fff;
   margin-bottom: 20px;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .testimonials-subtitle {
   font-size: 1.2rem;
-  color: var(--color-text);
+  color: #fff;
   opacity: 0.8;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.testimonials-filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.testimonials-filter-buttons .filter-button {
+  padding: 10px 25px;
+  border: 1px solid var(--color-accent);
+  background-color: #fff;
+  color: var(--color-text);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.testimonials-filter-buttons .filter-button:hover {
+  background-color: #f7f7f7;
+  transform: translateY(-2px);
+}
+
+.testimonials-filter-buttons .filter-button.active {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 .testimonials-grid {
@@ -40,6 +73,7 @@
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
   margin-bottom: 60px;
+  align-items: start;
 }
 
 .testimonial-card {
@@ -48,8 +82,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   border: 1px solid var(--color-accent);
-  /* Adicionado para garantir que o vídeo se encaixe */
-  line-height: 0; 
+  background-color: #fdfdfd; /* Cor de fundo para o espaço vazio */
 }
 
 .testimonial-card:hover {
@@ -57,11 +90,9 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-/* Nova classe genérica para imagens e vídeos */
 .testimonial-media {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -114,4 +145,27 @@
   .testimonials-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-verde) 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, var(--color-verde) 0%, var(--color-primary) 100%);
 }

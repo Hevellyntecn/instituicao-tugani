@@ -2,10 +2,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './GallerySection.css';
 
-import img1 from '../../assets/images/clinica-recepcao.jpg';
-import img2 from '../../assets/images/clinica-escritorio.jpg';
+import img1 from '../../assets/images/tugani-principal.jpg';
+import img2 from '../../assets/images/tugani-frente.jpg';
 import img3 from '../../assets/images/clinica-consultorio.jpg';
-import img4 from '../../assets/images/clinica-sala-tratamento-1.jpg';
+import img4 from '../../assets/images/tugani-recepcao.jpg';
 import img5 from '../../assets/images/clinica-tratamento-2.jpg';
 import img6 from '../../assets/images/clinica-tratamento-3.jpg';
 
@@ -31,8 +31,8 @@ export const GallerySection: React.FC = () => {
   return (
     <section className="gallery-section">
       <div className="gallery-header">
-        <h2 className="gallery-title">O Espaço</h2>
-        <p className="gallery-subtitle">Um ambiente projetado para seu conforto, segurança e bem-estar.</p>
+        <h2 className="gallery-title">Espaço Tugani</h2>
+        <p className="gallery-subtitle">Conforto, segurança e bem-estar reunidos em um espaço criado para cuidar de você.</p>
       </div>
       
       <motion.div ref={carouselRef} className="gallery-carousel-wrapper" whileTap={{ cursor: "grabbing" }}>

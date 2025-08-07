@@ -2,60 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './ServicesSection.css';
 
+// 1. IMPORTE AS 5 IMAGENS QUE VOCÊ ENVIOU
+import servicoOdontologia from '../../assets/images/servico-odontologia.jpg';
+import servicoHarmonizacao from '../../assets/images/servico-harmonizacao.jpg';
+import servicoSpa from '../../assets/images/servico-spa.jpg';
+import servicoEstetica from '../../assets/images/servico-estetica.jpg';
+import servicoSaude from '../../assets/images/servico-saude-integrada.jpg';
+
 const services = [
-  {
-    id: 1,
-    category: 'Odontologia',
-    title: 'Odontologia Estética',
-    description: 'Transforme seu sorriso com tratamentos modernos e personalizados',
-    icon: '',
-    features: [
-      'Odontologia Estética',
-      'Clínico Geral',
-      'Tratamento de Canal',
-      'Implantes dentários',
-      'Prótese total (dentadura) e parcial',
-      'Ortodontia (aparelhos ortodônticos)',
-      'Distúrbio do sono e bruxismo',
-      'Odontopediatria',
-      'Atendimento a pacientes com necessidades especiais(transtorno do espectro autista e outras condições que afetam o neurodesenvoleimento)',   ],
-  },
-  {
-    id: 2,
-    category: 'Harmonização',
-    title: 'Harmonização Facial e Corporal',
-    description: 'Realce sua beleza natural com procedimentos avançados',
-    features: [
-      'Gerenciamento de pele',
-      'Rejuvenecimento facial e corporal',
-      'Harmonização facial',
-      'Preenchimento labial',
-      'Bioestímulo de colágeno',
-      'Estética Regenerativa',
-      'Suplementação natural personalizada',
-      'Prescrição de biocosméticos personalizados',
-      'Tratamento de flacidez',
-      'Tratamento de cicatrizes e manchas',
-      'Harmonização do bumbum',
-    ],
-  },
-  {
-    id: 3,
-    category: 'Spa e Terapia ',
-    title: 'Tratamentos Corporais',
-    description: 'Cuide do seu corpo com técnicas inovadoras e resultados comprovados',
-    features: [
-      'Massagem relaxante',
-      'Massagem terapêutica',
-      'Aromaterapia',
-      'Spa dos pés',
-      'Ventosaterapia',
-      'Drenagem linfática',
-      'Pós-operatório',
-      'Massagem modeladora',
-      'Liberação miofascial',
-    ],
-  }
+  { id: 1, title: 'Odontologia', imageSrc: servicoOdontologia },
+  { id: 2, title: 'Harmonização Facial e Corporal', imageSrc: servicoHarmonizacao },
+  { id: 3, title: 'Spa e Terapias Corporais', imageSrc: servicoSpa },
+  { id: 4, title: 'Estética Facial e Terapias Combinadas', imageSrc: servicoEstetica },
+  { id: 5, title: 'Saúde Integrada', imageSrc: servicoSaude }
 ];
 
 export const ServicesSection: React.FC = () => {
@@ -69,56 +28,36 @@ export const ServicesSection: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className='services-title'>
-            Nossos Serviços Especializados
-          </h2>
-          <p className='services-subtitle'>
-            Oferecemos tratamentos completos em odontologia, estética facial e corporal, 
-            sempre com a excelência e profissionalismo que você merece
-          </p>
+          <h2 className='services-title'> Nossos Serviços Especializados </h2>
+          <p className='services-subtitle'> Oferecemos tratamentos completos em odontologia, estética facial e corporal, sempre com a excelência e profissionalismo que você merece </p>
         </motion.div>
 
         <div className='services-grid'>
           {services.map((service, index) => (
-            <motion.div
+            // MUDANÇA 2: O link agora aponta para o nosso novo alvo "#agendamento"
+            <motion.a
               key={service.id}
+              href="#agendamento" 
               className='service-card'
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.15 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
             >
-              <div className='service-icon' style={{ }}>
-                <span>{service.icon}</span>
-              </div>
-              
-              <div className='service-category'>{service.category}</div>
-              <h3 className='service-title'>{service.title}</h3>
-              <p className='service-description'>{service.description}</p>
-              
-              <ul className='service-features'>
-                {service.features.map((feature, idx) => (
-                  <li key={idx}>
-                    <span className='feature-icon'>✓</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-
-              <a 
-                href='https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20do%20Instituto%20Tugani.'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='service-cta'
-              >
-                Agendar Consulta
-              </a>
-            </motion.div>
+              <img 
+                src={service.imageSrc} 
+                alt={service.title} 
+                className="service-card-image" 
+                loading="lazy" 
+              />
+            </motion.a>
           ))}
         </div>
 
+        {/* MUDANÇA 1: Adicionamos o id="agendamento" aqui, na área do botão */}
         <motion.div 
+          id="agendamento"
           className='services-cta'
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,9 +70,9 @@ export const ServicesSection: React.FC = () => {
             href='https://whatsapp.faleconosco.chat/redirect/731235a3f'
             target='_blank'
             rel='noopener noreferrer'
-            className='services-button'
+            className='btn-primary'
           >
-            Agendar Avaliação Gratuita
+            Agendar com Especialista
           </a>
         </motion.div>
       </div>
