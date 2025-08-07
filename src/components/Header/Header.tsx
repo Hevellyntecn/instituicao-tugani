@@ -4,7 +4,6 @@ import './Header.css';
 import logoImg from '../../assets/images/logo-tugani.png';
 
 export const Header: React.FC = () => {
-  // O estado 'isTransparent' e o useEffect foram removidos, pois não são mais necessários.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,7 +12,6 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* O className agora é fixo, sem lógica condicional */}
       <header className="header-fixed">
         <div className="header-container">
           <a href="#" className="logo">
@@ -26,7 +24,6 @@ export const Header: React.FC = () => {
             <a href="#contact">Contato</a>
           </nav>
           <div className="header-actions-desktop">
-             {/* Usando a classe global que já criamos */}
             <a href="#agendamento" className="btn-primary">
               Agende uma consulta
             </a>

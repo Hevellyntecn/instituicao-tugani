@@ -17,36 +17,28 @@ export const HeroSlider: React.FC = () => {
             <div className="hero-description animated fadeInRight">
               <p>
                 <strong>Dra. Wanessa Faria </strong>
-                <span> é Cirurgiã-Dentista, Farmacêutica e Doutora pela UNICAMP, especialista em Estética Facial e referência em estética regenerativa. CEO do Instituto Tugani, lidera uma equipe dedicada ao cuidado integral e à valorização da saúde bucal e beleza natural. É também criadora da Tugani Cosméticos, marca orgânica e vegana desenvolvida com ativos biocompatíveis à base de café verde, unindo ciência, sustentabilidade e inovação em cuidados com a pele.</span>
+                <span> é Cirurgiã-Dentista, Farmacêutica e Doutora pela UNICAMP, especialista em Estética Facial e referência em estética regenerativa. CEO do Instituto Tugani, lidera uma equipe dedicada ao cuidado integral e à valorização da saúde bucal e beleza natural. É também criadora da Tugani Cosméticos, marca orgânica e vegana desenvolvida com ativos biocompatíveis à base de café verde, unindo ciência, sustentabilidade e inovação em cuidados com a pele.</span>
               </p>
             </div>
             <div className="hero-button-section">
-              <div className="hero-button-container">
-                <div className="hero-button-wrapper">
-                  <a
-                    className="hero-button"
-                    href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20gratuita."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className="button-content-wrapper">
-                      <span className="button-text">Agende uma consulta</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
+              <a
+                className="btn-primary"
+                href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20gratuita."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agende uma consulta
+              </a>
             </div>
           </div>
         </div>
         <div className="hero-image-column">
           <div className="hero-image-wrapper">
-            <div className="hero-image-placeholder">
-              <img 
-                src={draWanessaImage}
-                alt="Dra. Wanessa - Especialista em Harmonização Facial"
-                className="hero-professional-image"
-              />
-            </div>
+            <img 
+              src={draWanessaImage}
+              alt="Dra. Wanessa - Especialista em Harmonização Facial"
+              className="hero-professional-image"
+            />
           </div>
         </div>
       </div>

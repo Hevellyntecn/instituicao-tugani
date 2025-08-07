@@ -1,63 +1,75 @@
+/* --- Base Styles (Mobile First) --- */
 .gallery-section {
-  padding: 100px 0;
+  padding: 80px 0;
   background-color: var(--color-background);
-  overflow: hidden; /* Garante que nada transborde da seção */
+  overflow: hidden;
 }
 
 .gallery-header {
   text-align: center;
-  padding: 0 40px;
-  margin-bottom: 60px;
+  padding: 0 20px;
+  margin-bottom: 40px;
 }
 
 .gallery-title {
   font-family: var(--font-title);
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 8vw, 3rem);
   color: #fff;
 }
 
 .gallery-subtitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #fff;
   opacity: 0.8;
   max-width: 500px;
   margin: 16px auto 0 auto;
 }
 
-/* Este é o nosso 'trilho' ou 'viewport' para o carrossel */
 .gallery-carousel-wrapper {
   cursor: grab;
   overflow: hidden;
   max-width: 100%;
 }
 
-/* Este é o container que realmente se move */
 .gallery-container {
   display: flex;
-  gap: 30px;
-  padding: 0 40px;
+  gap: 15px; /* Gap menor para mobile */
+  padding: 0 20px; /* Padding menor para mobile */
 }
 
 .gallery-item {
   flex-shrink: 0;
-  width: 400px;
-  min-width: 400px;
+  width: 80vw; /* Itens ocupam 80% da largura da tela */
+  max-width: 300px; /* Mas não mais que 300px */
 }
 
 .gallery-item img {
   width: 100%;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
   border-radius: 8px;
-  pointer-events: none; /* Evita o comportamento padrão de arrastar imagens */
+  pointer-events: none;
+  aspect-ratio: 3 / 4; /* Proporção vertical consistente */
 }
 
-@media (max-width: 768px) {
-  .gallery-item {
-    width: 300px;
-    min-width: 300px;
+/* --- Tablet Styles (min-width: 769px) --- */
+@media (min-width: 769px) {
+  .gallery-section {
+    padding: 100px 0;
   }
-  .gallery-item img {
-    height: 400px;
+
+  .gallery-header {
+    margin-bottom: 60px;
+    padding: 0 40px;
+  }
+  
+  .gallery-container {
+    gap: 30px;
+    padding: 0 40px;
+  }
+  
+  .gallery-item {
+    width: 40vw; /* Itens ocupam menos espaço */
+    max-width: 400px;
   }
 }

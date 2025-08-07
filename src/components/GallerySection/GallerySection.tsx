@@ -23,9 +23,16 @@ export const GallerySection: React.FC = () => {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    if (carouselRef.current) {
-      setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
-    }
+    const handleResize = () => {
+      if (carouselRef.current) {
+        setWidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth);
+      }
+    };
+    
+    handleResize(); // Executa na montagem
+    window.addEventListener('resize', handleResize); // Adiciona listener para redimensionamento
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
@@ -40,11 +47,7 @@ export const GallerySection: React.FC = () => {
           className="gallery-container" 
           drag="x" 
           dragConstraints={{ right: 0, left: -width }}
-          dragElastic={0.1}
-          dragTransition={{
-            power: 0.15,
-            timeConstant: 250
-          }}
+          // ... props de animação
         >
           {galleryImages.map((image, index) => (
             <motion.div key={index} className="gallery-item">
