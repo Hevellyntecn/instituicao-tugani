@@ -57,7 +57,6 @@
 }
 
 .testimonials-filter-buttons .filter-button:hover {
-  background-color: #f7f7f7;
   transform: translateY(-2px);
 }
 
@@ -72,17 +71,17 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 30px;
-  margin-bottom: 60px;
   align-items: start;
 }
 
 .testimonial-card {
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  border: 1px solid var(--color-accent);
-  background-color: #fdfdfd; /* Cor de fundo para o espaço vazio */
+  /* NOVO: Prepara o card para centralizar seu conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial-card:hover {
@@ -92,10 +91,53 @@
 
 .testimonial-media {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  /* Padrão para IMAGENS: preencher o card */
+  object-fit: cover; 
 }
 
+/* --- REGRAS ESPECÍFICAS PARA O VÍDEO --- */
+
+/* Esta regra faz o VÍDEO ficar menor e sem cortes */
+.testimonial-card--video .testimonial-media {
+  width: auto; /* Permite que a largura se ajuste à proporção */
+  height: auto; /* Permite que a altura se ajuste à proporção */
+  max-width: 90%; /* O vídeo ocupará no máximo 90% da largura do card */
+  max-height: 400px; /* Altura máxima para o vídeo não ficar muito grande */
+  object-fit: contain; /* Garante que não haja cortes */
+  border-radius: 10px; /* Adiciona bordas arredondadas ao próprio vídeo */
+}
+
+/* --- ESTILOS DO BOTÃO 'VER MAIS' (Versão Profissional) --- */
+.load-more-container {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 80px; 
+}
+
+.load-more-button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: 2px solid var(--color-primary);
+  padding: 14px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.load-more-button:hover {
+  background-color: white;
+  color: var(--color-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* --- CTA FINAL --- */
 .testimonials-cta {
   text-align: center;
   background: #F8F4F0;
@@ -122,28 +164,18 @@
   margin-right: auto;
 }
 
-.testimonials-button {
-  display: inline-flex;
-  padding: 16px 32px;
-  background: var(--color-primary);
-  color: white;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.testimonials-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  background: var(--color-verde);
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: minmax(0, 450px);
+    justify-content: center;
+  }
 }
 
 @media (max-width: 768px) {
   .testimonials-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 450px);
+    justify-content: center;
   }
 }
 
@@ -169,3 +201,4 @@
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
   background: linear-gradient(135deg, var(--color-verde) 0%, var(--color-primary) 100%);
 }
+

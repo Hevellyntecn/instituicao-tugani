@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import './ServicesSection.css';
 
 // 1. IMPORTE AS 5 IMAGENS QUE VOCÊ ENVIOU
-import servicoOdontologia from '../../assets/images/servico-odontologia.jpg';
-import servicoHarmonizacao from '../../assets/images/servico-harmonizacao.jpg';
-import servicoSpa from '../../assets/images/servico-spa.jpg';
-import servicoEstetica from '../../assets/images/servico-estetica.jpg';
-import servicoSaude from '../../assets/images/servico-saude-integrada.jpg';
+import servicoOdontologia from '../../assets/images/servicos/servico-odontologia.jpg';
+import servicoHarmonizacao from '../../assets/images/servicos/servico-harmonizacao.jpg';
+import servicoSpa from '../../assets/images/servicos/servico-spa.jpg';
+import servicoEstetica from '../../assets/images/servicos/servico-estetica.jpg';
+import servicoSaude from '../../assets/images/servicos/servico-saude-integrada.jpg';
 
 const services = [
   { id: 1, title: 'Odontologia', imageSrc: servicoOdontologia },

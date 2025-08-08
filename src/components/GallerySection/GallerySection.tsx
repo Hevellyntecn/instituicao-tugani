@@ -2,12 +2,12 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './GallerySection.css';
 
-import img1 from '../../assets/images/tugani-principal.jpg';
-import img2 from '../../assets/images/tugani-frente.jpg';
-import img3 from '../../assets/images/clinica-consultorio.jpg';
-import img4 from '../../assets/images/tugani-recepcao.jpg';
-import img5 from '../../assets/images/clinica-tratamento-2.jpg';
-import img6 from '../../assets/images/clinica-tratamento-3.jpg';
+import img1 from '../../assets/images/clinica/tugani-principal.jpg';
+import img2 from '../../assets/images/clinica/tugani-frente.jpg';
+import img3 from '../../assets/images/clinica/clinica-consultorio.jpg';
+import img4 from '../../assets/images/clinica/tugani-recepcao.jpg';
+import img5 from '../../assets/images/clinica/clinica-tratamento-2.jpg';
+import img6 from '../../assets/images/clinica/clinica-tratamento-3.jpg';
 
 const galleryImages = [
   { src: img1, alt: 'Recepção do Instituto TUGANI' },
