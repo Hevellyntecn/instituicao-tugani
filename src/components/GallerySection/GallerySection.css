@@ -1,28 +1,30 @@
-/* --- Base Styles (Mobile First) --- */
 .gallery-section {
-  padding: 80px 0;
+  padding: 100px 0;
   background-color: var(--color-background);
   overflow: hidden;
 }
 
 .gallery-header {
   text-align: center;
-  padding: 0 20px;
-  margin-bottom: 40px;
+  padding: 0 40px;
+  margin-bottom: 60px;
 }
 
 .gallery-title {
-  font-family: var(--font-title);
-  font-size: clamp(2.2rem, 8vw, 3rem);
+  font-family: var(--font-accent);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
   color: #fff;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .gallery-subtitle {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #fff;
   opacity: 0.8;
-  max-width: 500px;
+  max-width: 600px;
   margin: 16px auto 0 auto;
+  line-height: 1.6;
 }
 
 .gallery-carousel-wrapper {
@@ -33,43 +35,34 @@
 
 .gallery-container {
   display: flex;
-  gap: 15px; /* Gap menor para mobile */
-  padding: 0 20px; /* Padding menor para mobile */
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .gallery-item {
   flex-shrink: 0;
-  width: 80vw; /* Itens ocupam 80% da largura da tela */
-  max-width: 300px; /* Mas não mais que 300px */
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.gallery-item img {
-  width: 100%;
+/* 4. APLICAMOS OS MESMOS ESTILOS PARA IMG E VIDEO */
+.gallery-item img,
+.gallery-item video {
   height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100%; /* Alterado para 100% para consistência */
+  object-fit: cover; /* Faz a mídia cobrir o espaço, cortando se necessário */
+  display: block;
   pointer-events: none;
-  aspect-ratio: 3 / 4; /* Proporção vertical consistente */
 }
 
-/* --- Tablet Styles (min-width: 769px) --- */
-@media (min-width: 769px) {
-  .gallery-section {
-    padding: 100px 0;
-  }
-
-  .gallery-header {
-    margin-bottom: 60px;
-    padding: 0 40px;
-  }
-  
-  .gallery-container {
-    gap: 30px;
-    padding: 0 40px;
-  }
-  
+@media (max-width: 768px) {
   .gallery-item {
-    width: 40vw; /* Itens ocupam menos espaço */
-    max-width: 400px;
+    height: 400px;
+  }
+  .gallery-container {
+    gap: 15px;
+    padding: 0 15px;
   }
 }
