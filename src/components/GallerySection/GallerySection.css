@@ -28,6 +28,10 @@
 }
 
 .gallery-carousel-wrapper {
+  position: relative;
+}
+
+.gallery-viewport {
   cursor: grab;
   overflow: hidden;
   max-width: 100%;
@@ -47,17 +51,53 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* 4. APLICAMOS OS MESMOS ESTILOS PARA IMG E VIDEO */
 .gallery-item img,
 .gallery-item video {
   height: 100%;
-  width: 100%; /* Alterado para 100% para consistência */
-  object-fit: cover; /* Faz a mídia cobrir o espaço, cortando se necessário */
+  width: auto;
   display: block;
   pointer-events: none;
 }
 
+.carousel-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.carousel-arrow:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.carousel-arrow.prev {
+  left: 15px;
+}
+
+.carousel-arrow.next {
+  right: 15px;
+}
+
 @media (max-width: 768px) {
+  .carousel-arrow {
+    display: flex; 
+  }
+
   .gallery-item {
     height: 400px;
   }
