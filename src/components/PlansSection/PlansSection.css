@@ -60,7 +60,7 @@
   position: relative;
   z-index: 2;
   max-width: 100%;
-  overflow: hidden;
+  padding: 0 20px;
 }
 
 /* Navigation Arrows */
@@ -254,7 +254,7 @@
   }
   
   .plans-container {
-    padding: 20px;
+    padding: 20px 40px;
     gap: 20px;
   }
   
@@ -270,6 +270,6 @@
   }
   
   .plans-carousel-wrapper {
-    padding: 0 60px;
+    padding: 0 80px;
   }
 }

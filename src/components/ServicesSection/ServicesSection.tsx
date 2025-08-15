@@ -116,12 +116,10 @@ export const ServicesSection: React.FC = () => {
               whileHover={{ y: -10 }}
             >
               <div className="service-title">{service.title}</div>
-              <p className="service-description">{service.description}</p>
               
               <ul className="service-features">
                 {service.features.map((feature, idx) => (
                   <li key={idx}>
-                    <span className="feature-icon">✓</span>
                     {feature}
                   </li>
                 ))}
@@ -146,7 +144,7 @@ export const ServicesSection: React.FC = () => {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Agendar avaliação gratuita
+            Agende uma consulta
           </a>
         </motion.div>
       </div>
