@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProductsShowcase.css';
 
-
 import saboneteImg from '../../assets/images/produto-tugani/produto-sabonete.png';
 import aguaMicelarImg from '../../assets/images/produto-tugani/produto-agua-micelar.png';
 import dermaComplexImg from '../../assets/images/produto-tugani/produto-derma-complex.png';
 import rollonImg from '../../assets/images/produto-tugani/produto-rollon.png';
-import kitCompletoImg from '../../assets/images/produto-tugani/kit-completo.png'; 
+import kitCompletoImg from '../../assets/images/produto-tugani/kit-completo.png';
 
 const products = [
   { 
@@ -38,7 +37,6 @@ const products = [
     benefits: ["Suaviza olheiras", "Reduz linhas finas", "Diminui bolsas", "Ilumina o olhar"],
     ingredients: "Cafeína, Vitamina K, Ácido Hialurônico"
   },
-  // 5. NOVO ITEM: O Kit Completo
   { 
     image: kitCompletoImg, 
     label: 'Kit Completo Tugani',
@@ -55,16 +53,15 @@ const createProductWhatsAppLink = (productName: string) => {
 
 export const ProductsShowcase: React.FC = () => {
   const [index, setIndex] = useState(0);
-  // Guardamos a direção do slide para a animação
   const [direction, setDirection] = useState(0);
 
   const goToNext = () => {
-    setDirection(1); // Direção para a direita
+    setDirection(1);
     setIndex(prevIndex => (prevIndex + 1) % products.length);
   };
 
   const goToPrev = () => {
-    setDirection(-1); // Direção para a esquerda
+    setDirection(-1);
     setIndex(prevIndex => (prevIndex - 1 + products.length) % products.length);
   };
 
@@ -75,12 +72,11 @@ export const ProductsShowcase: React.FC = () => {
 
   const currentProduct = products[index];
 
-  // Variantes de animação para o efeito de deslize
   const variants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 30 : -30, // Começa apenas 30px fora do centro
+      x: direction > 0 ? 30 : -30,
       opacity: 0,
-      scale: 0.95, // Começa um pouco menor
+      scale: 0.95,
     }),
     center: {
       zIndex: 1,
@@ -90,9 +86,9 @@ export const ProductsShowcase: React.FC = () => {
     },
     exit: (direction: number) => ({
       zIndex: 0,
-      x: direction < 0 ? 30 : -30, // Sai apenas 30px para o lado
+      x: direction < 0 ? 30 : -30,
       opacity: 0,
-      scale: 0.95, // Termina um pouco menor
+      scale: 0.95,
     }),
   };
 
@@ -100,8 +96,7 @@ export const ProductsShowcase: React.FC = () => {
     <section id="products" className="showcase-final-section">
       <div className="showcase-final-container">
         <div className="product-stage-final">
-          {/* Botão de Voltar */}
-          <button className="carousel-arrow prev" onClick={goToPrev}>&#8249;</button>
+          <button className="carousel-arrow.prev" onClick={goToPrev}>&#8249;</button>
           
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
@@ -112,20 +107,15 @@ export const ProductsShowcase: React.FC = () => {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               <img src={currentProduct.image} alt={currentProduct.label} className="product-image" />
               <div className="product-glow"></div>
             </motion.div>
           </AnimatePresence>
 
-          {/* Botão de Avançar */}
-          <button className="carousel-arrow next" onClick={goToNext}>&#8250;</button>
+          <button className="carousel-arrow.next" onClick={goToNext}>&#8250;</button>
           
-          {/* Bolinhas de Navegação */}
           <div className="carousel-dots">
             {products.map((_, i) => (
               <button
@@ -147,12 +137,12 @@ export const ProductsShowcase: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="product-content"
             >
-              <h2 className="product-info-main-title">Nossa Linha Completa</h2>
+              <h2 className="product-info-main-title">Nossa linha completa</h2>
               <div className="product-details">
                 <h3 className="product-title">{currentProduct.label}</h3>
                 <p className="product-description">{currentProduct.description}</p>
                 <div className="benefits-section">
-                  <h4 className="benefits-title">Principais Benefícios</h4>
+                  <h4 className="benefits-title">Principais benefícios</h4>
                   <ul className="benefits-list">
                     {currentProduct.benefits.map((benefit) => (
                       <li key={benefit} className="benefit-item">
@@ -162,12 +152,12 @@ export const ProductsShowcase: React.FC = () => {
                   </ul>
                 </div>
                 <div className="ingredients-section">
-                  <h4 className="ingredients-title">Ingredientes Principais</h4>
+                  <h4 className="ingredients-title">Ingredientes principais</h4>
                   <p className="ingredients-text">{currentProduct.ingredients}</p>
                 </div>
                 <div className="product-cta">
                   <a href={createProductWhatsAppLink(currentProduct.label)} target="_blank" rel="noopener noreferrer" className="btn-primary">
-                    {currentProduct.label === 'Kit Completo Tugani' ? 'Quero o Kit Completo' : 'Saber Mais'}
+                    {currentProduct.label === 'Kit Completo Tugani' ? 'Quero o kit completo' : 'Saber mais'}
                   </a>
                 </div>
               </div>

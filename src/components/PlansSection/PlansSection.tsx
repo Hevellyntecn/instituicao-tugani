@@ -33,7 +33,7 @@ export const PlansSection: React.FC = () => {
   return (
     <section id="plans" className="plans-section">
       <div className="plans-header">
-        <h2 className="plans-title">Planos de Cuidado</h2>
+        <h2 className="plans-title">Planos de cuidado</h2>
         <p className="plans-subtitle">
           Cuidado contínuo com a qualidade do Instituto TUGANI. Role para o lado para descobrir o plano ideal para você ou crie um personalizado conosco.
         </p>
@@ -63,7 +63,7 @@ export const PlansSection: React.FC = () => {
                 rel="noopener noreferrer"
                 className="plan-card-cta"
               >
-                Quero Saber Mais
+                Quero saber mais
               </a>
             </motion.div>
           ))}

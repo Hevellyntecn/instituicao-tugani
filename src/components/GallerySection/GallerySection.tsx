@@ -76,7 +76,7 @@ export const GallerySection: React.FC = () => {
   return (
     <section className="gallery-section">
       <div className="gallery-header">
-        <h2 className="gallery-title">Nosso Espaço</h2>
+        <h2 className="gallery-title">Nosso espaço</h2>
         <p className="gallery-subtitle">Conforto, segurança e bem-estar reunidos em um espaço criado para cuidar de você.</p>
       </div>
       

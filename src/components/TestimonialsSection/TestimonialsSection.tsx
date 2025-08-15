@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './TestimonialsSection.css';
 
+// Suas importações de imagens e vídeos
 import resultado1 from '../../assets/images/harmonizacao/harmonizacao01.jpg';
 import resultado2 from '../../assets/images/harmonizacao/harmonizacao02.jpg';
 import resultado3 from '../../assets/images/harmonizacao/harmonizacao03.jpg';
@@ -80,7 +81,7 @@ export const TestimonialsSection: React.FC = () => {
       <div className="testimonials-container">
         <div className="testimonials-header">
           <h2 className="testimonials-title" >
-            Resultados que Falam por Si
+            Resultados que falam por si
           </h2>
           <p className="testimonials-subtitle">
             Acreditamos na transformação real e visível. Veja alguns exemplos do nosso trabalho.
@@ -137,13 +138,13 @@ export const TestimonialsSection: React.FC = () => {
               onClick={() => setIsExpanded(!isExpanded)}
               className="load-more-button"
             >
-              {isExpanded ? 'Ver Menos' : 'Ver Mais'}
+              {isExpanded ? 'Ver menos' : 'Ver mais'}
             </button>
           </div>
         )}
 
         <div className="testimonials-cta">
-          <h3>Quer fazer parte das nossas histórias de sucesso?</h3>
+          <h3>Quer cuidar da sua autoestima conosco?</h3>
           <p>Agende sua avaliação e descubra como podemos transformar sua autoestima. Sua história de sucesso pode começar hoje!</p>
           <a
             href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Vi%20os%20resultados%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20conhecer%20mais."
@@ -151,7 +152,7 @@ export const TestimonialsSection: React.FC = () => {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Agendar Avaliação
+            Agendar avaliação
           </a>
         </div>
       </div>

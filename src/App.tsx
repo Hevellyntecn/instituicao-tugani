@@ -5,7 +5,9 @@ import { ProductsShowcase } from './components/ProductsShowcase/ProductsShowcase
 import { TestimonialsSection } from './components/TestimonialsSection/TestimonialsSection';
 import { GallerySection } from './components/GallerySection/GallerySection';
 import { PlansSection } from './components/PlansSection/PlansSection';
+import { TeamSection } from './components/TeamSection/TeamSection';
 import { Footer } from './components/Footer/Footer';
+import { WhatsAppButton } from './components/WhatsAppButton/WhatsAppButton';
 import './index.css';
 
 function App() {
@@ -16,11 +18,13 @@ function App() {
         <HeroSlider />
         <ServicesSection />
         <ProductsShowcase />
-        <TestimonialsSection />
         <PlansSection />
+        <TestimonialsSection />
+        <TeamSection />
         <GallerySection />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }
