@@ -30,6 +30,18 @@ export const PlansSection: React.FC = () => {
     }
   }, []);
 
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="plans" className="plans-section">
       <div className="plans-header">
@@ -39,36 +51,46 @@ export const PlansSection: React.FC = () => {
         </p>
       </div>
 
-      <motion.div ref={carouselRef} className="plans-carousel-wrapper" whileTap={{ cursor: "grabbing" }}>
-        <motion.div
-          className="plans-container"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-        >
-          {plansData.map((plan, index) => (
-            <motion.div key={index} className="plan-card">
-              <h3 className="plan-card-title">{plan.title}</h3>
-              <div className="plan-card-price-wrapper">
-                <span className="plan-card-price">{plan.price}</span>
-                <span className="plan-card-details">{plan.details}</span>
-              </div>
-              <ul className="plan-card-features">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx}>✓ {feature}</li>
-                ))}
-              </ul>
-              <a
-                href={`https://wa.me/5565981703400?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${plan.title} do Instituto Tugani.`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="plan-card-cta"
-              >
-                Quero saber mais
-              </a>
-            </motion.div>
-          ))}
+      <div className="plans-carousel-wrapper">
+        {/* Mobile Navigation Arrows */}
+        <button className="plans-arrow prev" onClick={scrollLeft} aria-label="Planos anteriores">
+          &#8249;
+        </button>
+        <button className="plans-arrow next" onClick={scrollRight} aria-label="Próximos planos">
+          &#8250;
+        </button>
+
+        <motion.div ref={carouselRef} className="plans-carousel" whileTap={{ cursor: "grabbing" }}>
+          <motion.div
+            className="plans-container"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+          >
+            {plansData.map((plan, index) => (
+              <motion.div key={index} className="plan-card">
+                <h3 className="plan-card-title">{plan.title}</h3>
+                <div className="plan-card-price-wrapper">
+                  <span className="plan-card-price">{plan.price}</span>
+                  <span className="plan-card-details">{plan.details}</span>
+                </div>
+                <ul className="plan-card-features">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx}>✓ {feature}</li>
+                  ))}
+                </ul>
+                <a
+                  href={`https://wa.me/5565981703400?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${plan.title} do Instituto Tugani.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="plan-card-cta"
+                >
+                  Quero saber mais
+                </a>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 };

@@ -126,15 +126,6 @@ export const ServicesSection: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-              <a
-                href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20planos%20do%20Instituto%20Tugani."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="service-cta"
-              >
-                Agendar consulta
-              </a>
             </motion.div>
           ))}
         </div>
