@@ -50,7 +50,9 @@ const services = [
       'Drenagem linfática',
       'Pós-operatório',
       'Massagem modeladora',
-      'Liberação miofascial'
+      'Liberação miofascial',
+      'Tratamentos para estrias e flacidez',
+      'Terapias para celulites'
     ]
   },
   {
@@ -62,11 +64,12 @@ const services = [
       'Peeling',
       'Revitalização facial com cosméticos veganos',
       'Design de sobrancelhas',
-      'Pigmentação orgânica',
+      'Micro e nano pigmentação de sobrancelhas',
       'Terapia capilar',
       'Microagulhamento drug-delivery',
       'Carboxiterapia',
       'Peelings bioativos regenerativos',
+      'Terapia regenerativa de sobrancelhas'
     ]
   },
   {
