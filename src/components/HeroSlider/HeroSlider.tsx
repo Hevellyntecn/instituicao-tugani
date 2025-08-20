@@ -23,7 +23,7 @@ export const HeroSlider: React.FC = () => {
             <div className="hero-button-section">
               <a
                 className="btn-primary"
-                href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20gratuita."
+                href="https://wa.me/556592841136?text=Olá! Gostaria de agendar uma consulta gratuita."
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -24,7 +24,12 @@ export const Header: React.FC = () => {
             <a href="#contact">Contato</a>
           </nav>
           <div className="header-actions-desktop">
-            <a href="#agendamento" className="btn-primary">
+            <a 
+              href="https://wa.me/556592841136?text=Olá! Gostaria de agendar uma consulta no Instituto Tugani."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
               Agende uma consulta
             </a>
           </div>
@@ -49,11 +54,17 @@ export const Header: React.FC = () => {
             exit={{ opacity: 0 }}
           >
             <nav className="mobile-nav-links">
-              <a href="#services" onClick={toggleMenu}>Serviços</a>
-              <a href="#products" onClick={toggleMenu}>Produtos</a>
-              <a href="#testimonials" onClick={toggleMenu}>Depoimentos</a>
-              <a href="#contact" onClick={toggleMenu}>Contato</a>
-              <a href="#agendamento" className="mobile-nav-cta" onClick={toggleMenu}>
+              <a href="/services" onClick={toggleMenu}>Serviços</a>
+              <a href="/products" onClick={toggleMenu}>Produtos</a>
+              <a href="/testimonials" onClick={toggleMenu}>Depoimentos</a>
+              <a href="/contact" onClick={toggleMenu}>Contato</a>
+              <a 
+                href="https://wa.me/556592841136?text=Olá! Gostaria de agendar uma consulta no Instituto Tugani."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-nav-cta" 
+                onClick={toggleMenu}
+              >
                 Agendar Sua Jornada
               </a>
             </nav>

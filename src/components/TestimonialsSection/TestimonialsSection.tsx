@@ -145,9 +145,9 @@ export const TestimonialsSection: React.FC = () => {
 
         <div className="testimonials-cta">
           <h3>Quer cuidar da sua autoestima conosco?</h3>
-          <p>Agende sua avaliação e descubra como podemos transformar sua autoestima. Sua história de sucesso pode começar hoje!</p>
+          <p>Agende sua avaliação e descubra como podemos transformar sua autoestima.</p>
           <a
-            href="https://wa.me/5565981703400?text=Ol%C3%A1!%20Vi%20os%20resultados%20no%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20para%20conhecer%20mais."
+                          href="https://wa.me/556592841136?text=Olá! Vi os resultados no site e gostaria de agendar uma avaliação para conhecer mais."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

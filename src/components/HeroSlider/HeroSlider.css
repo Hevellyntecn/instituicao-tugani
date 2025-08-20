@@ -2,7 +2,7 @@
 .hero-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: 600px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -29,8 +29,6 @@
   height: 100%;
   position: relative;
   z-index: 2;
-  /* --- MUDANÇA AQUI --- */
-  /* Removemos o max-width e o padding para o efeito full-width */
   max-width: none; 
   margin: 0;
   padding: 0;
@@ -132,8 +130,6 @@
     rgba(221, 198, 198, 0.2) 100%
   );
 }
-
-/* ... (Animações permanecem as mesmas) ... */
 
 /* --- RESPONSIVIDADE (INTACTA E FUNCIONAL) --- */
 @media (max-width: 992px) {

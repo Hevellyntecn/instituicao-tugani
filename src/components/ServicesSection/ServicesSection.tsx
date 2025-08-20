@@ -142,7 +142,7 @@ export const ServicesSection: React.FC = () => {
           <h3>Quer conhecer todos os nossos tratamentos?</h3>
           <p>Agende uma avaliação personalizada e descubra qual é o melhor tratamento para você</p>
           <a
-            href="https://whatsapp.faleconosco.chat/redirect/731235a3f"
+            href="https://wa.me/556592841136?text=Olá! Gostaria de agendar uma consulta no Instituto Tugani."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

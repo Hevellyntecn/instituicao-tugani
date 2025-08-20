@@ -48,7 +48,7 @@ const products = [
 
 const createProductWhatsAppLink = (productName: string) => {
   const message = `Olá! Tenho interesse no ${productName} da linha Tugani.`;
-  return `https://wa.me/5565981703400?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/556592841136?text=${encodeURIComponent(message)}`;
 };
 
 export const ProductsShowcase: React.FC = () => {

@@ -79,7 +79,7 @@ export const PlansSection: React.FC = () => {
                   ))}
                 </ul>
                 <a
-                  href={`https://wa.me/5565981703400?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${plan.title} do Instituto Tugani.`)}`}
+                  href={`https://wa.me/556592841136?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre o ${plan.title} do Instituto Tugani.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="plan-card-cta"
