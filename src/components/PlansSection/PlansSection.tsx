@@ -32,13 +32,23 @@ export const PlansSection: React.FC = () => {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      const cardWidth = window.innerWidth <= 768 ? 
+        (window.innerWidth <= 480 ? 
+          (window.innerWidth <= 360 ? window.innerWidth - 120 : window.innerWidth - 130) 
+          : window.innerWidth - 140) 
+        : 320;
+      carouselRef.current.scrollBy({ left: -cardWidth - 20, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+      const cardWidth = window.innerWidth <= 768 ? 
+        (window.innerWidth <= 480 ? 
+          (window.innerWidth <= 360 ? window.innerWidth - 120 : window.innerWidth - 130) 
+          : window.innerWidth - 140) 
+        : 320;
+      carouselRef.current.scrollBy({ left: cardWidth + 20, behavior: 'smooth' });
     }
   };
 
