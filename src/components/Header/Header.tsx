@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
           <nav className="navigation-desktop">
             <a href="#services">Serviços</a>
             <a href="#products">Produtos</a>
-            <a href="#testimonials">Depoimentos</a>
+            <a href="#testimonials">Testemunhas</a>
             <a href="#contact">Contato</a>
           </nav>
           <div className="header-actions-desktop">
